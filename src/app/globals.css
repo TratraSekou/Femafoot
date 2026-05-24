@@ -1,0 +1,194 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-sans);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  --background: #d8e5e1; 
+  --foreground: #f8fafc; /* Rendu clair pour le texte sur fond sombre global */
+  --card: #93b9b0;
+  --card-foreground: #111827; /* Texte sombre sur les cartes claires */
+  --popover: #93b9b0;
+  --popover-foreground: #111827;
+  --primary: #cba041; 
+  --primary-foreground: #ffffff;
+  --secondary: #e6c56f; 
+  --secondary-foreground: #111827;
+  --muted: #a6c9c1;
+  --muted-foreground: #cbd5e1; /* Gris clair pour le texte secondaire sur fond sombre */
+  --accent: #ffffff; /* Pour l'état actif */
+  --accent-foreground: #1c4b40;
+  --destructive: #e3000f; 
+  --border: #7caaa0;
+  --input: #7caaa0;
+  --ring: #cba041;
+  --chart-1: #1c4b40;
+  --chart-2: #cba041;
+  --chart-3: #e3000f;
+  --chart-4: #225c4e;
+  --chart-5: #30806d;
+  --radius: 0.75rem; /* Coins plus structurés et pro */
+  --sidebar: #0f1c1a; /* Sidebar très sombre, presque noire */
+  --sidebar-foreground: #e5eef1; /* Texte clair dans la sidebar */
+  --sidebar-primary: #cba041;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #ffffff;
+  --sidebar-accent-foreground: #225c4e;
+  --sidebar-border: #1c4b40;
+  --sidebar-ring: #cba041;
+}
+
+.dark {
+  --background: #152220; /* Teal très très sombre */
+  --foreground: #f3f4f6;
+  --card: #2e5950; /* Teal sombre pour les cartes */
+  --card-foreground: #f3f4f6;
+  --popover: #2e5950;
+  --popover-foreground: #f3f4f6;
+  --primary: #cba041;
+  --primary-foreground: #ffffff;
+  --secondary: #e6c56f;
+  --secondary-foreground: #111827;
+  --muted: #1c4b40;
+  --muted-foreground: #d1d5db;
+  --accent: #ffffff;
+  --accent-foreground: #152220;
+  --destructive: #ef4444;
+  --border: #3b6b61;
+  --input: #3b6b61;
+  --ring: #cba041;
+  --chart-1: #cba041;
+  --chart-2: #e6c56f;
+  --chart-3: #ef4444;
+  --chart-4: #4a8276;
+  --chart-5: #65a698;
+  --sidebar: #173830;
+  --sidebar-foreground: #f3f4f6;
+  --sidebar-primary: #cba041;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #ffffff; 
+  --sidebar-accent-foreground: #173830; 
+  --sidebar-border: #132b25;
+  --sidebar-ring: #cba041;
+}
+
+/* Gradient global pour l'application (style Enterprise) */
+.bg-app-gradient {
+  background: radial-gradient(circle at 50% -20%, #24473c 0%, #0d1e19 60%, #060f0d 100%);
+}
+.dark .bg-app-gradient {
+  background: radial-gradient(circle at 50% -20%, #24473c 0%, #0d1e19 60%, #060f0d 100%);
+}
+
+/* Animations premium & lueurs */
+.glow-effect {
+  box-shadow: 0 0 30px rgba(203, 160, 65, 0.08); /* Lueur dorée douce */
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.glow-effect:hover {
+  box-shadow: 0 0 40px rgba(203, 160, 65, 0.25);
+  transform: translateY(-2px) scale(1.01);
+}
+
+.glass-card {
+  background: rgba(13, 30, 25, 0.45);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    background: radial-gradient(circle at 50% -20%, #24473c 0%, #0d1e19 60%, #060f0d 100%);
+    @apply text-slate-200 min-h-screen antialiased;
+  }
+  .dark body {
+    background: radial-gradient(circle at 50% -20%, #24473c 0%, #0d1e19 60%, #060f0d 100%);
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+/* Custom Scrollbar Premium (Masque la barre native moche) */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Scrollbar spécifique (ex: Drawer, Modal) avec accent doré subtil */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(203, 160, 65, 0.3); /* Or transparent */
+}
+
+/* Support Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+}
+.custom-scrollbar {
+  scrollbar-color: rgba(203, 160, 65, 0.3) transparent;
+}
